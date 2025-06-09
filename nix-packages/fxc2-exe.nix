@@ -9,6 +9,7 @@
     owner = "chaserhkj";
     repo = "fxc2";
     rev = "6ec4ed467428a207e97797898e6fa6655571b077";
+    hash = "sha256-M8v+aUpbn47XJVSImrakDzu3oDQ+ULNZOVpFaA+3W7g=";
   };
   phases = [ "buildPhase" "installPhase" ];
   buildInputs = [
