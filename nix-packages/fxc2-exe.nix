@@ -1,8 +1,8 @@
 {
-  stdenv,
   pkgsCross,
   fetchFromGitHub,
-}: stdenv.mkDerivation {
+}: let stdenv = pkgsCross.mingw32.stdenv;
+  in stdenv.mkDerivation {
   pname = "fxc2.exe";
   version = "rolling";
   src = fetchFromGitHub {
@@ -11,12 +11,10 @@
     rev = "6ec4ed467428a207e97797898e6fa6655571b077";
     hash = "sha256-M8v+aUpbn47XJVSImrakDzu3oDQ+ULNZOVpFaA+3W7g=";
   };
-  phases = [ "buildPhase" "installPhase" ];
-  buildInputs = [
-    pkgsCross.mingw32.buildPackages.clang
-  ];
+  phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+  # Cross building w/ clang is broken in nix, use gcc instead
   buildPhase = ''
-    make x86
+    i686-w64-mingw32-g++ -static fxc2.cpp -ofxc2.exe
   '';
   installPhase = ''
     mkdir -p $out
