@@ -19,6 +19,6 @@
   installPhase = ''
     mkdir -p $out
     install -m755 fxc2.exe $out/fxc2.exe
-    install -m755 dll/d3dcompiler_47.dll $out/d3dcompiler_47.dll
+    install -m755 dll/d3dcompiler_47_32.dll $out/d3dcompiler_47.dll
   '';
 }
