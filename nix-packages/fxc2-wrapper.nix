@@ -2,7 +2,7 @@
   writeShellScriptBin,
   wine,
   fxc2-exe,
-  ...}: writeShellScriptBin "fxc2" ''
+}: writeShellScriptBin "fxc2" ''
 # Suppress console outputs
 export WINEDEBUG=-all
 # Use a different default wine prefix
