@@ -16,7 +16,7 @@ for line in sys.stdin:
                     app.add_flag_function("--{option},!--no-{option}",
                         [&](int count) {{flags = flags | {flag};}},
                         {help_text}
-                    );
+                    )->group("Compilation Flags");
 
                     """)
     
