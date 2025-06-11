@@ -4,6 +4,7 @@
     make-shells.default = {
       packages = (with self'.packages; [
         fxc2-wrapper
+        hlslcc-cli
       ]) ++ (with pkgs; [
         spirv-cross
       ]);
