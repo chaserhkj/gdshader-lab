@@ -8,8 +8,8 @@
   src = fetchFromGitHub {
     owner = "chaserhkj";
     repo = "fxc2";
-    rev = "6ec4ed467428a207e97797898e6fa6655571b077";
-    hash = "sha256-M8v+aUpbn47XJVSImrakDzu3oDQ+ULNZOVpFaA+3W7g=";
+    rev = "424f4f605e148a28234ac912d85773cf1762a48f";
+    hash = "sha256-7Ce5MG0Lxz6kpwd1co6xcWoIdTXWowKGVjygEcWRBNc=";
   };
   phases = [ "unpackPhase" "buildPhase" "installPhase" ];
   # Cross building w/ clang is broken in nix, use gcc instead
